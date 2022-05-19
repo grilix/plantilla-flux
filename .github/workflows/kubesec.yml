@@ -38,6 +38,8 @@ jobs:
           output: kubesec-results.sarif
           exit-code: "0"
 
+      - run: cat kubesec-results.sarif
+
       - name: Upload Kubesec scan results to GitHub Security tab
         uses: github/codeql-action/upload-sarif@v2
         with:
