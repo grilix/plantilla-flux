@@ -27,7 +27,7 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Collect all yaml
-        run: find . -type f -name "*.yaml" -exec sh -c 'cat {}' \; > all.yaml
+        run: find . -type f -name "*.yaml" -exec "cat {}" \; > all.yaml
 
       - name: Run kubesec scanner
         uses: controlplaneio/kubesec-action@main
