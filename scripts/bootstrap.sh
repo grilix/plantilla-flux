@@ -19,7 +19,7 @@ REPO=$(echo $REMOTE | awk -F/ '{print $2}')
 
 export GITHUB_USER="$USER"
 export GITHUB_REPO="$REPO"
-export GITHUB_TOKEN=$(cat ../gh-token)
+export GITHUB_TOKEN=$(cat ./gh-token)
 
 ## Meter flux
 flux bootstrap github \
