@@ -9,6 +9,8 @@
 
 ## 1. SOPS
 
+Asegúrate de estar en el contexto adecuado (checkea `kubectl config current-context`).
+
 Darle a `./scripts/sops-setup.sh` para crear la configuración necesaria.
 
 ### Secretos
@@ -23,8 +25,6 @@ Cuando quieras encriptar o desencriptar secretos, usa, por ejemplo:
 El script usará las claves de este repo.
 
 ## 2. Flux
-
-Asegúrate de estar en el contexto adecuado (checkea `kubectl config current-context`).
 
 Guarda el token de github en un archivo llamado '.gh-token' (puedes crear el token desde
 https://github.com/settings/tokens), luego corre el script de inicialización:

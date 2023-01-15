@@ -68,7 +68,10 @@ create_sops_secret() {
       --from-file=sops.asc=/dev/stdin >/dev/null
 }
 
-
-if ! sops_key_secret >/dev/null 2>&1; then
-  create_sops_secret "cluster"
+if sops_key_secret >/dev/null 2>&1; then
+  echo "Error: El secret con la clave ya existe, asegúrate de estar usando el contexto adecuado." >&2
+  echo "  > El contexto actual es: $(kubectl config current-context)" >&2
+  exit 1
 fi
+
+create_sops_secret "cluster"
